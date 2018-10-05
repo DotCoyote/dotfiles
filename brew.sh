@@ -20,14 +20,9 @@ brew upgrade
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
+brew install stow
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
-# Install some other useful utilities like `sponge`.
-brew install moreutils
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-brew install findutils
-# Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
 # Install Bash 4.
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`.
@@ -40,12 +35,13 @@ brew install zsh
 # Install `wget` with IRI support.
 brew install wget --with-iri
 
+# Install MAS CLI
+brew install mas
 
 # Install more recent versions of some OS X tools.
 brew install vim --override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/screen
-# brew install homebrew/php/php55 --with-gmp --with-mysql
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
@@ -57,10 +53,7 @@ brew install ack
 brew install git
 brew install imagemagick --with-webp
 brew install p7zip
-# brew install mysql
-# brew install php55-mcrypt
 brew install rename
-brew install speedtest_cli
 brew install webkit2png
 brew install zopfli
 
@@ -68,36 +61,41 @@ brew install zopfli
 # installation method.
 brew install node
 
+# Install NVM instead
+brew install nvm
+
+# Install yarn
+brew install yarn
+
 # Install Cask
 brew install caskroom/cask/brew-cask
 
 # Apps
 apps=(
   1password
-  adobe-creative-cloud
   alfred
-  atom
-  coda
-  dash
-  dropbox
-  google-chrome
-  firefox
+  appcleaner
+  bear
+  flux
   franz
-  firefox
-  gitkraken
-  hyperdock
-  iterm2
+  homebrew/cask-versions/firefox-developer-edition
+  google-chrome
+  hyper
   istat-menus
   jumpshare
   kaleidoscope
-  little-snitch
-  mamp
+  opera
+  postman
   quicklook-json
-  sketch
   sequel-pro
+  slack
   soulver
+  spotify
   sublime-text3
+  tower
+  transmit
   virtualbox
+  visual-studio-code
 )
 
 # Install apps to /Applications
@@ -108,12 +106,9 @@ brew cask install --appdir="/Applications" ${apps[@]}
 brew cask alfred link
 
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
-defaults write com.apple.finder QLEnableTextSelection -bool true && killall Finder
-
 
 
 # fonts
-
 brew tap caskroom/fonts
 fonts=(
   font-m-plus
@@ -128,29 +123,25 @@ fonts=(
   font-fira-sans
 )
 
-
 # install fonts
 echo "installing fonts..."
 brew cask install ${fonts[@]}
 
-#adding homestead as vagrant box
-# vagrant box add laravel/homestead
-
-#require homestead globally with composer
-# echo "globally install homestead with composer"
-# composer global require "laravel/homestead=~2.0"
-
 # install gulp
 echo "installing gulp"
-npm install --global gulp
+yarn global add gulp
 
-#install bower
-echo "installing bower"
-npm install -g bower
+echo "Installing App Store Applications"
+mas signin larseichler.le@gmail.com
 
-#install yarn
-echo "installing yarn"
-brew install yarn
+# Bear
+mas install 1091189122
+
+# soulver
+mas install 413965349
+
+# Hyperdock
+mas install 449830122
 
 # Remove outdated versions from the cellar.
 brew cleanup
