@@ -80,7 +80,7 @@ apps=(
   franz
   homebrew/cask-versions/firefox-developer-edition
   google-chrome
-  hyper
+  iterm2
   istat-menus
   jumpshare
   kaleidoscope
