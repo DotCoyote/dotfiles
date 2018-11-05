@@ -12,8 +12,11 @@ git clone git@github.com:tarjoilija/zgen.git /Users/larseichler/zgen
 # Install ZSH Quickstart kit
 git clone git@github.com:unixorn/zsh-quickstart-kit.git /Users/larseichler/zsh-quickstart-kit
 
-cd zsh-quickstart-kit
-stow --target=/Users/larseichler /Users/larseichler/zsh-quickstart-kit/zsh
-
 # Copy ZSH Settings
-cp ./.zshrc.d /Users/larseichler
+cp -R ./.zshrc.d /Users/larseichler
+
+cd zsh-quickstart-kit
+stow --target=/Users/larseichler zsh
+
+# Set ZSH as default shell
+chsh -s /bin/zsh
