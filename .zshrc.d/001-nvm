@@ -1,6 +1,6 @@
 # source /usr/local/share/antigen/antigen.zsh
 
-export NVM_DIR="/Users/larseichler/.nvm"
+export NVM_DIR="/Users/$(whoami)/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 zgen load lukechilds/zsh-nvm

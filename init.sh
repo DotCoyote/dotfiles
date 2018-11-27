@@ -10,7 +10,10 @@ sh addssh.sh
 sh zgen.sh
 
 # Copy hyper Settings
-cp ./.hyper.js /Users/larseichler
+cp ./.hyper.js /Users/$(whoami)
+
+# Copy EURKey Keyboard Layout
+cp ./EurKey\ -\ modified-us.keylayout /Users/$(whoami)/Lirary/Keyboard\ Layouts
 
 # Set macOS Settings
 sh .macos.sh
