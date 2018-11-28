@@ -107,6 +107,7 @@ brew cask alfred link
 
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
 
+brew cask install go2shell open-in-code
 
 # fonts
 brew tap caskroom/fonts
