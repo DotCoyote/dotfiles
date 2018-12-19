@@ -49,6 +49,9 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # Screen                                                                      #
 ###############################################################################
 
+#Disable Mojave font rendering
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool FALSE
+
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
