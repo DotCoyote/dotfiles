@@ -27,6 +27,8 @@ brew install svn
 # Apps
 apps=(
   alfred
+  brave-browser
+  google-chrome
   franz
   homebrew/cask-versions/firefox-developer-edition
   iterm2
