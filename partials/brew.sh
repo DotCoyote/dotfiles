@@ -24,6 +24,9 @@ brew install zsh
 # Install svn
 brew install svn
 
+# Install GitHub CLI
+brew install gh
+
 # Apps
 apps=(
   alfred
